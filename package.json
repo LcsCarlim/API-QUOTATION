@@ -2,14 +2,18 @@
   "name": "cotacao",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn index.js"
+    "dev": "nodemon src/server.js"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "git": "^0.1.5",
     "node": "^19.6.1",
-    "request": "^2.88.2",
-    "ts-node-dev": "^2.0.0"
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
