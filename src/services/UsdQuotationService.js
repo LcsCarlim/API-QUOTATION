@@ -1,34 +1,18 @@
-import fetch from 'node-fetch';
-
-const moedas = "USD-BRL,EUR-BRL,BTC-BRL";
-
-export const options = {
-    url: `https://economia.awesomeapi.com.br/last/${moedas}`,
-    
-};
+import { getCurrencyGateway } from "../gateway/GetAPIDataGateway.js";
+import { toBRL } from "../helpers/formatBRL.js";
 
 export default class UsdQuotationService {
     constructor() {}
     async execute() {
-        const data = fetch(`https://economia.awesomeapi.com.br/last/${moedas}`, { 
-            method: "GET",
-            headers: {
-                "Accept": "application/json",
-                "Accept-Charset": "utf-8",
-            }
-        });
-            // if (erro) throw new Error("Error")
-
-            const response = await data;
+        const response = await getCurrencyGateway();
             
-            const json = await response.json();
+        const json = await response.json();
 
-            
-            const USD = {
-                code: json.USDBRL.code,
-                bid: new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(json.USDBRL.bid),
-                create_date: json.USDBRL.create_date
-            };
+        const USD = {
+            code: json.USDBRL.code,
+            bid: toBRL(json.USDBRL.bid),
+            create_date: json.USDBRL.create_date
+        };
         
         return {
             USD

@@ -1,7 +1,7 @@
 import { getCurrencyGateway } from "../gateway/GetAPIDataGateway.js";
 import { toBRL } from "../helpers/formatBRL.js";
 
-export default class EurQuotationService {
+export default class CadQuotationService {
     constructor() {}
     async execute() {
         
@@ -10,14 +10,14 @@ export default class EurQuotationService {
         const json = await response.json();
 
             
-        const EUR = {
-            code: json.EURBRL.code,
-            bid: toBRL(json.EURBRL.bid),
-            create_date: json.EURBRL.create_date
+        const CAD = {
+            code: json.CADBRL.code,
+            bid: toBRL(json.CADBRL.bid),
+            create_date: json.CADBRL.create_date
         };
         
         return {
-            EUR
+            CAD
 
         };
     };
