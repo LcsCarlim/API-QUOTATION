@@ -9,6 +9,10 @@ const Quotation = new mongoose.Schema({
   },
   create_date: {
     type: Date
+  },
+  account_id: {
+    type: String,
+    required: true
   }
 });
 

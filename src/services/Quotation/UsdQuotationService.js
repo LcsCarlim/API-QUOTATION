@@ -4,7 +4,15 @@ const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class UsdQuotationService {
   constructor () {}
-  async execute () {
+  async execute (user_id) {
+    const maxRequests = 10;
+
+    const request = await QuotationModel.find({
+      account_id: user_id,
+      create_date: { $gte: new Date() - 10 * 60 * 1000 }
+    });
+    if (request.length > maxRequests) throw new Error('Too many requests');
+
     const response = await getCurrencyGateway();
 
     const json = await response.json();
@@ -12,7 +20,8 @@ module.exports = class UsdQuotationService {
     const USD = {
       code: json.USDBRL.code,
       bid: toBRL(json.USDBRL.bid),
-      create_date: json.USDBRL.create_date
+      create_date: json.USDBRL.create_date,
+      account_id: user_id
     };
 
     await QuotationModel.create(USD);

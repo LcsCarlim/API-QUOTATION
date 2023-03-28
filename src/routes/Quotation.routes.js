@@ -1,14 +1,11 @@
 const { Router } = require('express');
 
 const quotationController = require('../controller/QuotationController');
-
 const checkToken = require('../middlewares/CheckTokenMiddleware');
-
-const LogoutMiddleware = require('../middlewares/LogoutMiddleware');
 
 const quotationRoutes = Router();
 
-quotationRoutes.get('/', checkToken, LogoutMiddleware, quotationController.quotation);
+quotationRoutes.get('/', checkToken, quotationController.quotation);
 
 quotationRoutes.get('/usd', checkToken, quotationController.quotationUSD);
 
