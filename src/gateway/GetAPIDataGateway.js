@@ -1,17 +1,17 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-import dotenv from 'dotenv'
+const dotenv = require('dotenv');
 
-dotenv.config()
+dotenv.config();
 
 const API = process.env.API;
 
-export function getCurrencyGateway() {
-    return fetch(`${API}`, { 
-      method: "GET",
-      headers: {
-        "Accept": "application/json",
-        "Accept-Charset": "utf-8",
-      }
-    });
+module.exports = async () => {
+  return fetch(`${API}`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Accept-Charset': 'utf-8'
+    }
+  });
 };

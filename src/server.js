@@ -1,6 +1,11 @@
-import app from './index.js'
+const config = require('./index.js');
+
 try {
-    app.listen(3333, () => console.log("Server is running!"));
+  config.open('mongodb://localhost/quotationapi').then(() => {
+    config.app.listen(3333, () => {
+      console.log('Server is running!');
+    });
+  });
 } catch (error) {
-    console.log(error.message)
-}
+  console.log(error.message);
+};

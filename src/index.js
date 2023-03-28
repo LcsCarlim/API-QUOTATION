@@ -1,12 +1,21 @@
-import express from "express";
+const express = require('express');
 
-import { quotationRoutes } from "./routes/routes.js";
+const { routes } = require('../src/routes/User.routes');
+
+const { quotationRoutes } = require('./routes/Quotation.routes');
+
+const mongoose = require('mongoose');
+
+async function open (uri) {
+  await mongoose.connect(uri);
+}
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/quotation", quotationRoutes);
+app.use(routes);
 
+app.use('/quotation', quotationRoutes);
 
-export default app ;
+module.exports = { app, open, routes };
