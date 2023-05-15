@@ -14,6 +14,7 @@ app.use(express.json());
 
 routes.use('/docs', swaggerUi.serve);
 routes.get('/docs', swaggerUi.setup(swaggerDocs));
+app.use(express.static('https://api-quotation.vercel.app/docs/'));
 
 app.use(routes);
 
