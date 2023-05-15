@@ -3,7 +3,7 @@
     "info": {
       "title": "API QUOTATION",
       "description": "Essa API tem o objetivo a manipulação de dados",
-      "termsOfService": "http://localhost:3333/terms",
+      "termsOfService": "https://api-quotation.vercel.app/terms",
       "contact": {
         "email": "lucas.carlim@zuvia.com.br"
       },
@@ -11,7 +11,7 @@
     },
     "servers": [
       {
-        "url": "http://localhost:3333"
+        "url": "https://api-quotation.vercel.app"
       }
     ],
     "paths": {
