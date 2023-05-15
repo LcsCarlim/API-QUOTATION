@@ -15,6 +15,8 @@ app.use(express.json());
 routes.use('/docs', swaggerUi.serve);
 routes.get('/docs', swaggerUi.setup(swaggerDocs));
 
+app.use('/swagger-ui', express.static('swagger-ui'));
+
 app.use(routes);
 
 module.exports = { app, open };
