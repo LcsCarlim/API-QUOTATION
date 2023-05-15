@@ -1,5 +1,5 @@
 Arguments: 
-  /home/pingu/.nvm/versions/node/v20.0.0/bin/node /home/pingu/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add swagger-ui-src
+  /home/pingu/.nvm/versions/node/v20.0.0/bin/node /home/pingu/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add swagger-ui-bundle-js
 
 PATH: 
   /home/pingu/.nvm/versions/node/v20.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Users/lulue/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/lulue/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/lulue/AppData/Roaming/npm:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/swagger-ui-src: Not found
+  Error: https://registry.yarnpkg.com/swagger-ui-bundle-js: Not found
       at params.callback [as _callback] (/home/pingu/.cache/node/corepack/yarn/1.22.19/lib/cli.js:66145:18)
       at self.callback (/home/pingu/.cache/node/corepack/yarn/1.22.19/lib/cli.js:140890:22)
       at Request.emit (node:events:511:28)
@@ -33,6 +33,7 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+      "start": "node src/server.js",
       "dev": "nodemon src/server.js"
     },
     "dependencies": {
@@ -46,6 +47,7 @@ npm manifest:
       "mongoose": "^7.0.2",
       "node": "^19.6.1",
       "request": "^2.88.2",
+      "swagger-ui-dist": "^4.18.3",
       "swagger-ui-express": "^4.6.3"
     },
     "devDependencies": {
@@ -2426,7 +2428,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
   
-  swagger-ui-dist@>=4.11.0:
+  swagger-ui-dist@>=4.11.0, swagger-ui-dist@^4.18.3:
     version "4.18.3"
     resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.18.3.tgz#5529b7ca19d442c1adf0aea0802fff45c1ea29b5"
     integrity sha512-QW280Uvt234+TLo9NMPRa2Sj17RoorbQlR2eEY4R6Cs0LbdXhiO14YWX9OPBkBdiN64GQYz4zU8wlHLVi81lBg==
