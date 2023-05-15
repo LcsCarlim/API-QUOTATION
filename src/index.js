@@ -13,6 +13,9 @@ const app = express();
 
 app.use(express.json());
 
+routes.use('/docs', swaggerUi.serve);
+routes.get('/docs', swaggerUi.setup(swaggerDocs));
+
 app.use((req, res, next) => {
   const filePath = req.url.split('?')[0]; // Remove a query string da URL, se houver
   const mimeType = mime.contentType(filePath);
@@ -21,9 +24,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-routes.use('/docs', swaggerUi.serve);
-routes.get('/docs', swaggerUi.setup(swaggerDocs));
 
 app.use(routes);
 
