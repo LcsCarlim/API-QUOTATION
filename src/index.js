@@ -289,7 +289,7 @@ const serveFiles = function (swaggerDoc, opts) {
 const serve = [swaggerInitFn, swaggerAssetMiddleware()];
 const serveWithOptions = options => [swaggerInitFn, swaggerAssetMiddleware(options)];
 
-var stringify = function (obj, prop) {
+const stringify = function (obj, prop) {
   const placeholder = '____FUNCTIONPLACEHOLDER____';
   const fns = [];
   let json = JSON.stringify(obj, function (key, value) {
