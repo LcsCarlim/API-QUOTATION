@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
-const swaggerUi = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-dist');
 const swaggerDocs = require('./swagger.json');
 const mongoose = require('mongoose');
 
