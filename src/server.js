@@ -1,6 +1,7 @@
 require('dotenv').config();
 const config = require('.');
 const express = require('express');
+const path = require('path');
 const mime = require('mime');
 
 try {
@@ -14,6 +15,14 @@ try {
         res.setHeader('Content-Type', mimeType);
       }
       next();
+    });
+
+    // Configurar o diretório de arquivos estáticos
+    app.use(express.static(path.join(__dirname, 'public')));
+
+    // Roteamento
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public', 'index.html'));
     });
 
     app.listen(3333, () => {
