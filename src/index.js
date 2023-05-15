@@ -12,7 +12,8 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/docs', swaggerUi.serve);
+app.get(swaggerUi.setup(swaggerDocs));
 
 app.use(routes);
 

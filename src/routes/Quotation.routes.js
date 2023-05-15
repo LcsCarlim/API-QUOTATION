@@ -1,47 +1,54 @@
 const { Router } = require('express');
 const routes = Router();
 
-const quotationController = require('../controller/QuotationController');
 const checkToken = require('../middlewares/CheckTokenMiddleware');
+const ListAllQuotationController = require('../controller/quotation/ListAllQuotationController');
+const GetUsdQuotationController = require('../controller/quotation/GetUsdQuotationController');
+const GetCadQuotationController = require('../controller/quotation/GetCadQuotationController');
+const GetEurQuotationController = require('../controller/quotation/GetEurQuotationController');
+const GetBtcQuotationController = require('../controller/quotation/GetBtcQuotationController');
+const GetEthQuotationController = require('../controller/quotation/GetEthQuotationController');
+const GetLtcQuotationController = require('../controller/quotation/GetLtcQuotationController');
+const GetDogeQuotationController = require('../controller/quotation/GetDogeQuotationController');
 
 routes.get('/list',
   checkToken,
-  quotationController.quotation
+  ListAllQuotationController
 );
 
 routes.get('/usd',
   checkToken,
-  quotationController.quotationUSD
+  GetUsdQuotationController
 );
 
 routes.get('/cad',
   checkToken,
-  quotationController.quotationCAD
+  GetCadQuotationController
 );
 
 routes.get('/eur',
   checkToken,
-  quotationController.quotationEUR
+  GetEurQuotationController
 );
 
 routes.get('/btc',
   checkToken,
-  quotationController.quotationBTC
+  GetBtcQuotationController
 );
 
 routes.get('/eth',
   checkToken,
-  quotationController.quotationETH
+  GetEthQuotationController
 );
 
 routes.get('/ltc',
   checkToken,
-  quotationController.quotationLTC
+  GetLtcQuotationController
 );
 
 routes.get('/doge',
   checkToken,
-  quotationController.quotationDOGE
+  GetDogeQuotationController
 );
 
 module.exports = routes;
