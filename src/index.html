@@ -12,11 +12,8 @@
 
   <script>
     window.onload = function() {
-      // Caminho relativo para o arquivo JSON do Swagger
-      const swaggerJsonPath = './swagger.json';
-
       const ui = SwaggerUIBundle({
-        url: swaggerJsonPath,
+        url: "/docs",
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
