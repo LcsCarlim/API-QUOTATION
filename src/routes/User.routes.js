@@ -19,7 +19,7 @@ routes.post('/logout',
   UserController.logout
 );
 
-routes.post('/user',
+routes.post('/register',
   UserController.createUser
 );
 
