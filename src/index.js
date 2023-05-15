@@ -12,7 +12,7 @@ async function open (uri) {
 const app = express();
 
 app.use(express.json());
-app.use(Static('node_modules/swagger-ui-dist'));
+app.use(Static(__dirname));
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(routes);
