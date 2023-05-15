@@ -9,6 +9,9 @@
       },
       "version": "1.0.0"
     },
+    "assets": {
+    "base_path": "/api"
+  },
     "servers": [
       {
         "url": "https://api-quotation.vercel.app"
