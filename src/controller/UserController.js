@@ -110,11 +110,17 @@ module.exports = {
 
       const token = await createUserAuthService(email, password);
 
-      res.status(200).json({ msg: 'Authentication successful', token });
+      res.status(200).json({
+        message: 'Login successful!',
+        token
+      });
     } catch (error) {
       console.log(error);
 
-      res.status(500).json({ msg: error });
+      res.status(500).json({
+        error: 'Authenticate failed!',
+        message: error.message
+      });
     }
   },
   async logout (req, res) {

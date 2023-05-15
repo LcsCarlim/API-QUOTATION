@@ -3,7 +3,9 @@ const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class CadQuotationService {
-  constructor () {}
+  constructor () {
+  }
+
   async execute (user_id) {
     const maxRequests = 10;
 
@@ -20,11 +22,14 @@ module.exports = class CadQuotationService {
     const CAD = {
       code: json.CADBRL.code,
       bid: toBRL(json.CADBRL.bid),
-      create_date: json.CADBRL.create_date
+      create_date: json.CADBRL.create_date,
+      account_id: user_id
     };
 
     await QuotationModel.create(CAD);
 
-    return { CAD };
+    return {
+      CAD
+    };
   };
 };

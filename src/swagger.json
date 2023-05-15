@@ -1,0 +1,408 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API QUOTATION",
+      "description": "Essa API tem o objetivo a manipulação de dados",
+      "termsOfService": "http://localhost:3333/terms",
+      "contact": {
+        "email": "lucas.carlim@zuvia.com.br"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3333"
+      }
+    ],
+    "paths": {
+      "/users/register": {
+        "post": {
+          "summary": "Cadastro de usuários",
+          "description": "Essa rota será responsável por cadastrar um novo usuário. Segue a requisição com as informações corretas e com uma senha no mínimo de 8 caracteres.",
+          "tags": [
+            "Usuário"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "500": {
+              "description": "Houve um erro no registro!"
+            },
+            "201": {
+              "description": "Usuário criado com sucesso!",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/users/login": {
+        "post": {
+          "summary": "Login",
+          "description": "Essa rota será responsável para efetuar login.",
+          "tags": [
+            "Usuário"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Usuário logado com sucesso!"
+            },
+            "400": {
+              "description": "Houve um erro no login!"
+            }
+          }
+        }
+      },
+      "/users/list": {
+        "get": {
+          "tags": [
+            "Usuário"
+          ],
+          "summary": "Listar usuários",
+          "description": "Essa rota é responsável em listar todos os usuários da aplicação.",
+          "responses": {
+            "200": {
+              "description": "Usuários: ",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Erro na listagem de usuários!"
+            }
+          }
+        }
+      },
+      "/users/find/{id}": {
+        "get": {
+          "summary": "Buscar usuário por ID",
+          "description": "Essa rota será responsável por buscar um usuário pelo ID e passar as informações do próprio.",
+          "tags": [
+            "Usuário"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID do usuário",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+            "description": "Success"
+            },
+            "404": {
+              "description": "Not found"
+            }
+          }
+        }
+      },
+      "/users/delete/{id}": {
+        "delete": {
+          "summary": "Deletar um usuário",
+          "description": "Deletar o usuário pelo ID",
+          "tags": [
+            "Usuário"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID do usuário",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+            "description": "Usuário deletado"
+            },
+            "404": {
+              "description": "Usuário não encontrado"
+            }
+          }
+        }
+      },
+      "/quotations/list": {
+        "get": {
+            "summary": "Listar todas as cotações",
+            "description": "Lista todas as cotações disponíveis na API",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "description": "Moedas: ",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na listagem de moedas!"
+                }
+            }
+        }
+      },
+      "/quotations/usd": {
+        "get": {
+            "summary": "Buscar a cotação do dólar",
+            "description": "Irá listar apenas a cotação do dólar",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do dólar!"
+                }
+            }
+        }
+      },
+      "/quotations/cad": {
+        "get": {
+            "summary": "Buscar a cotação do dólar canadense",
+            "description": "Irá listar apenas a cotação do dólar canadense",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do dólar canadense!"
+                }
+            }
+        }
+      },
+      "/quotations/eur": {
+        "get": {
+            "summary": "Buscar a cotação do euro",
+            "description": "Irá listar apenas a cotação do euro",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do euro!"
+                }
+            }
+        }
+      },
+      "/quotations/btc": {
+        "get": {
+            "summary": "Buscar a cotação do bitcoin",
+            "description": "Irá listar apenas a cotação do bitcoin",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do bitcoin!"
+                }
+            }
+        }
+      },
+      "/quotations/eth": {
+        "get": {
+            "summary": "Buscar a cotação do ethereum",
+            "description": "Irá listar apenas a cotação do ethereum",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do ethereum!"
+                }
+            }
+        }
+      },
+      "/quotations/ltc": {
+        "get": {
+            "summary": "Buscar a cotação do litecoin",
+            "description": "Irá listar apenas a cotação do litecoin",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do litecoin!"
+                }
+            }
+        }
+      },
+      "/quotations/doge": {
+        "get": {
+            "summary": "Buscar a cotação do dogecoin",
+            "description": "Irá listar apenas a cotação do dogecoin",
+            "tags": [
+                "Cotação"
+            ],
+            "responses": {
+                "200": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Quotation"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Erro na cotação do dogecoin!"
+                }
+            }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "email", "password"]
+        },
+        "Quotation": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "bid": {
+              "type": "string"
+            },
+            "create_date": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "account_id": {
+              "type": "string"
+            }
+          },
+          "required": ["code", "bid", "create_date", "account_id"]
+        }
+      },
+      "securitySchemes": {
+        "bearer_token": {
+          "type": "http",
+          "description": "Coloque seu token aqui!",
+          "scheme": "bearer",
+          "in": "header",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+      "bearer_token": {
+        "type": "http",
+        "scheme": "bearer_token",
+        "bearerFormat": "JWT"
+      }
+    }
+   ]
+  }

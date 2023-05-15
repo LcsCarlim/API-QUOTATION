@@ -1,7 +1,8 @@
-const config = require('./index.js');
+require('dotenv').config();
+const config = require('.');
 
 try {
-  config.open('mongodb://localhost/quotationapi').then(() => {
+  config.open(process.env.MONGODB_URI).then(() => {
     config.app.listen(3333, () => {
       console.log('Server is running!');
     });

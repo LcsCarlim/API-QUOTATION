@@ -16,7 +16,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
     "node": "^19.6.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
     "eslint": "^8.36.0",

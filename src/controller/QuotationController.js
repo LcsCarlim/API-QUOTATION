@@ -31,16 +31,9 @@ module.exports = {
   async quotationCAD (req, res) {
     const { id } = req.user;
     const cadQuotationService = new CadQuotationService();
-    try {
-      const data = await cadQuotationService.execute(id);
+    const data = await cadQuotationService.execute(id);
 
-      res.status(200).json(data);
-    } catch (error) {
-      res.status(400).json({
-        Error: true,
-        message: error.message
-      });
-    }
+    res.status(200).json(data);
   },
 
   async quotationEUR (req, res) {
