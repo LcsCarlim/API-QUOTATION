@@ -1,34 +1,40 @@
 const { Router } = require('express');
 const routes = Router();
 
-const UserController = require('../controller/UserController');
+const ListAllUsersController = require('../controller/user/ListAllUsersController');
+const GetUserByIdController = require('../controller/user/GetUserByIdController');
+const UserLoginController = require('../controller/user/UserLoginController');
+const CreateUserController = require('../controller/user/CreateUserController');
+const DeleteUserController = require('../controller/user/DeleteUserController');
+const UserLogoutController = require('../controller/user/UserLogoutController');
+const PathUserController = require('../controller/user/PathUserController');
 
 routes.get('/list',
-  UserController.list
+  ListAllUsersController
 );
 
 routes.get('/find/:id',
-  UserController.getById
+  GetUserByIdController
 );
 
 routes.post('/login',
-  UserController.createUserAuth
+  UserLoginController
 );
 
 routes.post('/logout',
-  UserController.logout
+  UserLogoutController
 );
 
 routes.post('/register',
-  UserController.createUser
+  CreateUserController
 );
 
 routes.delete('/delete/:id',
-  UserController.deleteUser
+  DeleteUserController
 );
 
 routes.patch('/patch/:id',
-  UserController.updateUser
+  PathUserController
 );
 
 module.exports = routes;

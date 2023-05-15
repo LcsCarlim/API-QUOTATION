@@ -3,7 +3,7 @@ const routes = Router();
 
 const checkToken = require('../middlewares/CheckTokenMiddleware');
 const ListAllQuotationController = require('../controller/quotation/ListAllQuotationController');
-const GetUsdQuotationController = require('../controller/quotation/GetUsdQuotationController');
+const GetUsdQuotationController = require('../controller/quotation/GetQuotationUsdController');
 const GetCadQuotationController = require('../controller/quotation/GetCadQuotationController');
 const GetEurQuotationController = require('../controller/quotation/GetEurQuotationController');
 const GetBtcQuotationController = require('../controller/quotation/GetBtcQuotationController');
