@@ -405,8 +405,5 @@
         {
           "bearer_token": []
         }
-      ],
-      "x-swagger-ui": {
-        "css": "/src/custom-swagger.css"
-      } 
+      ]      
   }
