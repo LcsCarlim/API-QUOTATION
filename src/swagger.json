@@ -356,60 +356,54 @@
       }
     },
     "components": {
-      "schemas": {
-        "User": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
+        "schemas": {
+          "User": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
             },
-            
-            "email": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            }
+            "required": ["name", "email", "password"]
           },
-          "required": ["name", "email", "password"]
+          "Quotation": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "bid": {
+                "type": "string"
+              },
+              "create_date": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "account_id": {
+                "type": "string"
+              }
+            },
+            "required": ["code", "bid", "create_date", "account_id"]
+          }
         },
-        "Quotation": {
-          "type": "object",
-          "properties": {
-            "code": {
-              "type": "string"
-            },
-            "bid": {
-              "type": "string"
-            },
-            "create_date": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "account_id": {
-              "type": "string"
-            }
-          },
-          "required": ["code", "bid", "create_date", "account_id"]
+        "securitySchemes": {
+          "bearer_token": {
+            "type": "http",
+            "description": "Coloque seu token aqui!",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+          }
         }
       },
-      "securitySchemes": {
-        "bearer_token": {
-          "type": "http",
-          "description": "Coloque seu token aqui!",
-          "scheme": "bearer",
-          "in": "header",
-          "bearerFormat": "JWT"
+      "security": [
+        {
+          "bearer_token": []
         }
-      }
-    },
-    "security": [
-      {
-      "bearer_token": {
-        "type": "http",
-        "scheme": "bearer_token",
-        "bearerFormat": "JWT"
-      }
-    }
-   ]
+      ]      
   }
