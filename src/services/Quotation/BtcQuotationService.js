@@ -5,13 +5,13 @@ const QuotationModel = require('../../database/model/QuotationModel');
 module.exports = class BtcQuotationService {
   constructor () {}
   async execute (user_id) {
-    const maxRequests = 10;
+    // const maxRequests = 10;
 
-    const request = await QuotationModel.find({
-      account_id: user_id,
-      create_date: { $gte: new Date() - 10 * 60 * 1000 }
-    });
-    if (request.length > maxRequests) throw new Error('Too many requests');
+    // const request = await QuotationModel.find({
+    //   account_id: user_id,
+    //   create_date: { $gte: new Date() - 10 * 60 * 1000 }
+    // });
+    // if (request.length > maxRequests) throw new Error('Too many requests');
 
     const response = await getCurrencyGateway();
 
@@ -20,6 +20,8 @@ module.exports = class BtcQuotationService {
     const BTC = {
       code: json.BTCBRL.code,
       bid: toBRL(json.BTCBRL.bid),
+      high: toBRL(json.BTCBRL.high),
+      low: toBRL(json.BTCBRL.low),
       create_date: json.BTCBRL.create_date,
       account_id: user_id
     };

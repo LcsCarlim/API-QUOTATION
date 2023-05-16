@@ -7,13 +7,13 @@ module.exports = class DogeQuotationService {
   }
 
   async execute (user_id) {
-    const maxRequests = 10;
+    // const maxRequests = 10;
 
-    const request = await QuotationModel.find({
-      account_id: user_id,
-      create_date: { $gte: new Date() - 10 * 60 * 1000 }
-    });
-    if (request.length > maxRequests) throw new Error('Too many requests');
+    // const request = await QuotationModel.find({
+    //   account_id: user_id,
+    //   create_date: { $gte: new Date() - 10 * 60 * 1000 }
+    // });
+    // if (request.length > maxRequests) throw new Error('Too many requests');
 
     const response = await getCurrencyGateway();
 
@@ -22,6 +22,8 @@ module.exports = class DogeQuotationService {
     const DOGE = {
       code: json.DOGEBRL.code,
       bid: toBRL(json.DOGEBRL.bid),
+      high: toBRL(json.DOGEBRL.high),
+      low: toBRL(json.DOGEBRL.low),
       create_date: json.DOGEBRL.create_date,
       account_id: user_id
     };

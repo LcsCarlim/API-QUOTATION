@@ -5,13 +5,13 @@ const QuotationModel = require('../../database/model/QuotationModel');
 module.exports = class EurQuotationService {
   constructor () {}
   async execute (user_id) {
-    const maxRequests = 10;
+    // const maxRequests = 10;
 
-    const request = await QuotationModel.find({
-      account_id: user_id,
-      create_date: { $gte: new Date() - 10 * 60 * 1000 }
-    });
-    if (request.length > maxRequests) throw new Error('Too many requests');
+    // const request = await QuotationModel.find({
+    //   account_id: user_id,
+    //   create_date: { $gte: new Date() - 10 * 60 * 1000 }
+    // });
+    // if (request.length > maxRequests) throw new Error('Too many requests');
 
     const response = await getCurrencyGateway();
 
@@ -20,6 +20,8 @@ module.exports = class EurQuotationService {
     const EUR = {
       code: json.EURBRL.code,
       bid: toBRL(json.EURBRL.bid),
+      high: toBRL(json.EURBRL.high),
+      low: toBRL(json.EURBRL.low),
       create_date: json.EURBRL.create_date,
       account_id: user_id
     };

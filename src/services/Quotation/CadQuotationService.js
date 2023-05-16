@@ -7,13 +7,13 @@ module.exports = class CadQuotationService {
   }
 
   async execute (user_id) {
-    const maxRequests = 10;
+    // const maxRequests = 10;
 
-    const request = await QuotationModel.find({
-      account_id: user_id,
-      create_date: { $gte: new Date() - 10 * 60 * 1000 }
-    });
-    if (request.length > maxRequests) throw new Error('Too many requests');
+    // const request = await QuotationModel.find({
+    //   account_id: user_id,
+    //   create_date: { $gte: new Date() - 10 * 60 * 1000 }
+    // });
+    // if (request.length > maxRequests) throw new Error('Too many requests');
 
     const response = await getCurrencyGateway();
 
@@ -22,6 +22,8 @@ module.exports = class CadQuotationService {
     const CAD = {
       code: json.CADBRL.code,
       bid: toBRL(json.CADBRL.bid),
+      high: toBRL(json.CADBRL.high),
+      low: toBRL(json.CADBRL.low),
       create_date: json.CADBRL.create_date,
       account_id: user_id
     };
