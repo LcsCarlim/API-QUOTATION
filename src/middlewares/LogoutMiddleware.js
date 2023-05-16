@@ -1,10 +1,13 @@
-const { tokenIsInBlackList } = require('../services/User/BlackListService');
+const { tokenIsInListing } = require('../middlewares/TokenListingMiddleware');
 
 module.exports = async (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1];
-  const resultado = tokenIsInBlackList(token);
-  if (resultado) {
-    return res.status(401).json({ error: 'Invalid token' });
+  const result = tokenIsInListing(token);
+
+  if (result) {
+    return res.json(401).json({
+      error: 'Invalid Token'
+    });
   }
   next();
 };

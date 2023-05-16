@@ -8,12 +8,16 @@ const CreateUserController = require('../controller/user/CreateUserController');
 const DeleteUserController = require('../controller/user/DeleteUserController');
 const UserLogoutController = require('../controller/user/UserLogoutController');
 const PathUserController = require('../controller/user/PathUserController');
+const userAuth = require('../middlewares/CheckTokenMiddleware');
+const userLogout = require('../middlewares/LogoutMiddleware');
 
 routes.get('/list',
+  userAuth,
   ListAllUsersController
 );
 
 routes.get('/find/:id',
+  userAuth,
   GetUserByIdController
 );
 
@@ -22,6 +26,7 @@ routes.post('/login',
 );
 
 routes.post('/logout',
+  userLogout,
   UserLogoutController
 );
 
@@ -30,10 +35,12 @@ routes.post('/register',
 );
 
 routes.delete('/delete/:id',
+  userAuth,
   DeleteUserController
 );
 
-routes.patch('/patch/:id',
+routes.patch('/patch',
+  userAuth,
   PathUserController
 );
 

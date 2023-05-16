@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     const validator = await UserLoginValidator(req.body);
     if (validator.error) throw validator.error;
 
-    const token = await CreateUserAuthService(email, password);
+    const token = await CreateUserAuthService({ email, password });
 
     res.status(200).json({
       message: 'Login successful!',

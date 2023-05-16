@@ -1,6 +1,6 @@
 const UserModel = require('../../database/model/UserModel');
 
-module.exports = async (name, email, password) => {
+module.exports = async ({ name, email, password, role }) => {
   const userExists = await UserModel.findOne({
     email
   });
@@ -9,7 +9,8 @@ module.exports = async (name, email, password) => {
   const user = await UserModel.create({
     name,
     email,
-    password
+    password,
+    role
   });
 
   return user;

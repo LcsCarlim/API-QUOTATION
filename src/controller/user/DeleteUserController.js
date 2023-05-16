@@ -1,11 +1,15 @@
 const DeleteUserService = require('../../services/User/DeleteUserService');
 
 module.exports = async (req, res) => {
-  const { id } = req.params;
   try {
-    await DeleteUserService(id);
+    const { id } = req.params;
+    const { role } = req.user;
+    const deleteUser = await DeleteUserService(id, role);
 
-    res.status(201).json({ message: 'User deleted!' });
+    return res.status(201).json({
+      message: 'User deleted!',
+      deleteUser
+    });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

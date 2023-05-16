@@ -2,7 +2,7 @@ const updateUserService = require('../../services/User/UpdateUserService');
 const PathUserValidator = require('../../validators/user/PathUserValidator');
 
 module.exports = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.user;
   const { password } = req.body;
   try {
     const validator = await PathUserValidator;
