@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const routes = Router();
 
-const checkToken = require('../middlewares/CheckTokenMiddleware');
+const userAuth = require('../middlewares/CheckTokenMiddleware');
 const ListAllQuotationController = require('../controller/quotation/ListAllQuotationController');
 const GetUsdQuotationController = require('../controller/quotation/GetQuotationUsdController');
 const GetCadQuotationController = require('../controller/quotation/GetCadQuotationController');
@@ -12,42 +12,42 @@ const GetLtcQuotationController = require('../controller/quotation/GetLtcQuotati
 const GetDogeQuotationController = require('../controller/quotation/GetDogeQuotationController');
 
 routes.get('/list',
-  checkToken,
+  userAuth,
   ListAllQuotationController
 );
 
 routes.get('/usd',
-  checkToken,
+  userAuth,
   GetUsdQuotationController
 );
 
 routes.get('/cad',
-  checkToken,
+  userAuth,
   GetCadQuotationController
 );
 
 routes.get('/eur',
-  checkToken,
+  userAuth,
   GetEurQuotationController
 );
 
 routes.get('/btc',
-  checkToken,
+  userAuth,
   GetBtcQuotationController
 );
 
 routes.get('/eth',
-  checkToken,
+  userAuth,
   GetEthQuotationController
 );
 
 routes.get('/ltc',
-  checkToken,
+  userAuth,
   GetLtcQuotationController
 );
 
 routes.get('/doge',
-  checkToken,
+  userAuth,
   GetDogeQuotationController
 );
 

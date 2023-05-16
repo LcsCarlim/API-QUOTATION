@@ -162,6 +162,39 @@
           }
         }
       },
+      "/users/patch": {
+        "patch": {
+          "summary": "Alterar a senha do usuário",
+          "description": "O usuário terá que estar logado para alterar a senha, é necessário apenas colocar a nova senha.",
+          "tags": [
+            "Usuário"
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "password": {
+                      "type": "string",
+                      "description": "Nova senha do usuário"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Senha alterada!"
+            },
+            "400": {
+              "description": "Erro na requisição!"
+            }
+          }
+        }
+      },
       "/quotations/list": {
         "get": {
             "summary": "Listar todas as cotações",

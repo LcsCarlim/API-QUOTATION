@@ -7,12 +7,8 @@ module.exports = async (req, res) => {
     const validator = await CreateUserValidator(req.body);
     if (validator.error) throw validator.error;
 
-    const users = await CreateUsersService({
-      name,
-      email,
-      password,
-      role
-    });
+    const users = await CreateUsersService(name, email, password, role);
+
     return res.status(201).json(users);
   } catch (error) {
     return res.status(500).json({

@@ -1,6 +1,6 @@
 const UserModel = require('../../database/model/UserModel');
 
-module.exports = async ({ name, email, password, role }) => {
+module.exports = async (name, email, password, role) => {
   const userExists = await UserModel.findOne({
     email
   });
