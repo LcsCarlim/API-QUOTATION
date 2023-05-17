@@ -21,7 +21,8 @@ module.exports = class EthQuotationService {
       code: json.ETHBRL.code,
       bid: toBRL(json.ETHBRL.bid),
       high: toBRL(json.ETHBRL.high),
-      low: toBRL(json.BTCBRL.low),
+      low: toBRL(json.ETHBRL.low),
+      pctChange: `${json.ETHBRL.pctChange}%`,
       create_date: json.ETHBRL.create_date,
       account_id: user_id
     };

@@ -22,6 +22,7 @@ module.exports = class LtcQuotationService {
       bid: toBRL(json.LTCBRL.bid),
       high: toBRL(json.LTCBRL.high),
       low: toBRL(json.LTCBRL.low),
+      pctChange: `${json.LTCBRL.pctChange}%`,
       create_date: json.LTCBRL.create_date,
       account_id: user_id
     };
