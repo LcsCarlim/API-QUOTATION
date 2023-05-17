@@ -25,7 +25,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.USDBRL.bid),
       high: toBRL(json.USDBRL.high),
       low: toBRL(json.USDBRL.low),
-      pctChange: `${json.USDBRL.pctChange}%`,
+      pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
       account_id: user_id
     };
@@ -35,7 +35,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.CADBRL.bid),
       high: toBRL(json.CADBRL.high),
       low: toBRL(json.CADBRL.low),
-      pctChange: `${json.CADBRL.pctChange}%`,
+      pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       account_id: user_id
     };
@@ -45,7 +45,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.EURBRL.bid),
       high: toBRL(json.EURBRL.high),
       low: toBRL(json.EURBRL.low),
-      pctChange: `${json.EURBRL.pctChange}%`,
+      pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
       account_id: user_id
     };
@@ -55,7 +55,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.BTCBRL.bid),
       high: toBRL(json.BTCBRL.high),
       low: toBRL(json.BTCBRL.low),
-      pctChange: `${json.BTCBRL.pctChange}%`,
+      pctChange: Number(json.BTCBRL.pctChange),
       create_date: json.BTCBRL.create_date,
       account_id: user_id
     };
@@ -65,7 +65,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.ETHBRL.bid),
       high: toBRL(json.ETHBRL.high),
       low: toBRL(json.ETHBRL.low),
-      pctChange: `${json.ETHBRL.pctChange}%`,
+      pctChange: Number(json.ETHBRL.pctChange),
       create_date: json.ETHBRL.create_date,
       account_id: user_id
     };
@@ -75,7 +75,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.LTCBRL.bid),
       high: toBRL(json.LTCBRL.high),
       low: toBRL(json.LTCBRL.low),
-      pctChange: `${json.LTCBRL.pctChange}%`,
+      pctChange: Number(json.LTCBRL.pctChange),
       create_date: json.LTCBRL.create_date,
       account_id: user_id
     };
@@ -85,7 +85,7 @@ module.exports = class GetQuotationService {
       bid: toBRL(json.DOGEBRL.bid),
       high: toBRL(json.DOGEBRL.high),
       low: toBRL(json.DOGEBRL.low),
-      pctChange: `${json.DOGEBRL.pctChange}%`,
+      pctChange: Number(json.DOGEBRL.pctChange),
       create_date: json.DOGEBRL.create_date,
       account_id: user_id
     };

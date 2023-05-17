@@ -22,7 +22,7 @@ module.exports = class UsdQuotationService {
       bid: toBRL(json.USDBRL.bid),
       high: toBRL(json.USDBRL.high),
       low: toBRL(json.USDBRL.low),
-      pctChange: `${json.USDBRL.pctChange}%`,
+      pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
       account_id: user_id
     };

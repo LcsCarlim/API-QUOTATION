@@ -24,7 +24,7 @@ module.exports = class DogeQuotationService {
       bid: toBRL(json.DOGEBRL.bid),
       high: toBRL(json.DOGEBRL.high),
       low: toBRL(json.DOGEBRL.low),
-      pctChange: `${json.DOGEBRL.pctChange}%`,
+      pctChange: Number(json.DOGEBRL.pctChange),
       create_date: json.DOGEBRL.create_date,
       account_id: user_id
     };

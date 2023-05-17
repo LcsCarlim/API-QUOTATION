@@ -7,6 +7,15 @@ const Quotation = new mongoose.Schema({
   bid: {
     type: String
   },
+  high: {
+    type: String
+  },
+  low: {
+    type: String
+  },
+  pctChange: {
+    type: Number
+  },
   create_date: {
     type: Date
   },

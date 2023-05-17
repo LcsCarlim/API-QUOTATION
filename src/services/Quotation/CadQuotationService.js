@@ -24,7 +24,7 @@ module.exports = class CadQuotationService {
       bid: toBRL(json.CADBRL.bid),
       high: toBRL(json.CADBRL.high),
       low: toBRL(json.CADBRL.low),
-      pctChange: `${json.CADBRL.pctChange}%`,
+      pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       account_id: user_id
     };

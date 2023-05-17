@@ -22,7 +22,7 @@ module.exports = class EurQuotationService {
       bid: toBRL(json.EURBRL.bid),
       high: toBRL(json.EURBRL.high),
       low: toBRL(json.EURBRL.low),
-      pctChange: `${json.EURBRL.pctChange}%`,
+      pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
       account_id: user_id
     };
