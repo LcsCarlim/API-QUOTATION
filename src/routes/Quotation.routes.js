@@ -10,6 +10,8 @@ const GetBtcQuotationController = require('../controller/quotation/GetBtcQuotati
 const GetEthQuotationController = require('../controller/quotation/GetEthQuotationController');
 const GetLtcQuotationController = require('../controller/quotation/GetLtcQuotationController');
 const GetDogeQuotationController = require('../controller/quotation/GetDogeQuotationController');
+const CadImageController = require('../controller/quotation/CadImageController');
+const EurImageController = require('../controller/quotation/EurImageController');
 
 routes.get('/list',
   userAuth,
@@ -49,6 +51,14 @@ routes.get('/ltc',
 routes.get('/doge',
   userAuth,
   GetDogeQuotationController
+);
+
+routes.get('/cadanaimg',
+  CadImageController
+);
+
+routes.get('/euroimg',
+  EurImageController
 );
 
 module.exports = routes;
