@@ -1,8 +1,7 @@
 const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
-const cadImg = require('../../public/images/cad.png');
-const eurImg = require('../../public/images/eur.png');
+
 module.exports = class GetQuotationService {
   constructor () {}
   async execute (user_id) {
