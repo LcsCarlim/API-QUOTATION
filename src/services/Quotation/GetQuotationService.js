@@ -49,7 +49,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
       account_id: user_id,
-      image: 'https://ibb.co/8NBGxgW' // a
+      image: 'https://www.flickr.com/photos/198343813@N07/52906488642/in/dateposted-public/'
     };
 
     const BTC = {
