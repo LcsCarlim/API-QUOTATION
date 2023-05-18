@@ -1,6 +1,8 @@
 const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
+const cadImg = require('../../public/images/cad.png');
+const eurImg = require('../../public/images/eur.png');
 module.exports = class GetQuotationService {
   constructor () {}
   async execute (user_id) {
@@ -38,7 +40,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       account_id: user_id,
-      image: '../../public/images/300281 (1).png'
+      image: cadImg
     };
 
     const EUR = {
@@ -49,7 +51,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
       account_id: user_id,
-      image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg'
+      image: eurImg
     };
 
     const BTC = {
