@@ -38,7 +38,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.CADBRL.low),
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://thumbs2.imgbox.com/1d/3a/VAJIjJkr_t.png'
     };
 
     const EUR = {
