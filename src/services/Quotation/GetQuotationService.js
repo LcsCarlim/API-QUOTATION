@@ -48,7 +48,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.EURBRL.low),
       pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Feuro-symbol_3840766&psig=AOvVaw0cYOlcAs8qWsK8rucFT_62&ust=1684506603621000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNj7raCK__4CFQAAAAAdAAAAABAE'
     };
 
     const BTC = {
