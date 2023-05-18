@@ -1,7 +1,9 @@
 const fs = require('fs');
+const path = require('path');
+const imagePath = path.join(__dirname, '../../public/cad.png');
 
 module.exports = async (req, res) => {
-  fs.readFile('../../public/cad.png', (err, data) => {
+  fs.readFile(imagePath, (err, data) => {
     if (err) {
       // Em caso de erro ao ler o arquivo
       res.statusCode = 500;
