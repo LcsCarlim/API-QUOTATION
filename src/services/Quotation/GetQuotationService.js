@@ -27,7 +27,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.USDBRL.low),
       pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663'
     };
 
     const CAD = {
@@ -68,7 +69,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.ETHBRL.low),
       pctChange: Number(json.ETHBRL.pctChange),
       create_date: json.ETHBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'
     };
 
     const LTC = {
@@ -78,7 +80,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.LTCBRL.low),
       pctChange: Number(json.LTCBRL.pctChange),
       create_date: json.LTCBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580'
     };
 
     const DOGE = {
@@ -88,7 +91,8 @@ module.exports = class GetQuotationService {
       low: toBRL(json.DOGEBRL.low),
       pctChange: Number(json.DOGEBRL.pctChange),
       create_date: json.DOGEBRL.create_date,
-      account_id: user_id
+      account_id: user_id,
+      image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
     };
 
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
