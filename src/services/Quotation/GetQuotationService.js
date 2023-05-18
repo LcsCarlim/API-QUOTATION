@@ -1,6 +1,7 @@
 const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
+const cadImg = require('../../controller/quotation/CadImageController');
 
 module.exports = class GetQuotationService {
   constructor () {}
@@ -39,7 +40,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       account_id: user_id,
-      image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png'
+      image: cadImg
     };
 
     const EUR = {
