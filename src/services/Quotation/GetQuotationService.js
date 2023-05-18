@@ -1,8 +1,6 @@
 const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
-const ApiImg = process.env.API_IMG_BTC;
-const fetch = require('node-fetch');
 
 module.exports = class GetQuotationService {
   constructor () {}
@@ -60,8 +58,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.BTCBRL.pctChange),
       create_date: json.BTCBRL.create_date,
       account_id: user_id,
-      image: await fetch(ApiImg).then(res => res.buffer())
-
+      image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'
     };
 
     const ETH = {
