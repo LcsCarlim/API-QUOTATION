@@ -16,6 +16,9 @@ const Quotation = new mongoose.Schema({
   pctChange: {
     type: Number
   },
+  image: {
+    type: String
+  },
   create_date: {
     type: Date
   },
