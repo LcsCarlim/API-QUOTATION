@@ -2,9 +2,8 @@ const GetQuotationService = require('../../services/Quotation/GetQuotationServic
 
 module.exports = async (req, res) => {
   try {
-    const { id } = req.user;
     const getQuotationService = new GetQuotationService();
-    const data = await getQuotationService.execute(id);
+    const data = await getQuotationService.execute();
 
     res.status(200).json(data);
   } catch (error) {

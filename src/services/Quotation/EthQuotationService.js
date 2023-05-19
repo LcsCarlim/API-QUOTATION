@@ -4,7 +4,7 @@ const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class EthQuotationService {
   constructor () {}
-  async execute (user_id) {
+  async execute () {
     // const maxRequests = 10;
 
     // const request = await QuotationModel.find({
@@ -23,8 +23,8 @@ module.exports = class EthQuotationService {
       high: toBRL(json.ETHBRL.high),
       low: toBRL(json.ETHBRL.low),
       pctChange: Number(json.ETHBRL.pctChange),
-      create_date: json.ETHBRL.create_date,
-      account_id: user_id
+      create_date: json.ETHBRL.create_date
+      // account_id: user_id
     };
 
     await QuotationModel.create(ETH);

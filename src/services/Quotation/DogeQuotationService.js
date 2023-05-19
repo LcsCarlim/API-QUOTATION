@@ -6,7 +6,7 @@ module.exports = class DogeQuotationService {
   constructor () {
   }
 
-  async execute (user_id) {
+  async execute () {
     // const maxRequests = 10;
 
     // const request = await QuotationModel.find({
@@ -25,8 +25,8 @@ module.exports = class DogeQuotationService {
       high: toBRL(json.DOGEBRL.high),
       low: toBRL(json.DOGEBRL.low),
       pctChange: Number(json.DOGEBRL.pctChange),
-      create_date: json.DOGEBRL.create_date,
-      account_id: user_id
+      create_date: json.DOGEBRL.create_date
+      // account_id: user_id
     };
 
     await QuotationModel.create(DOGE);

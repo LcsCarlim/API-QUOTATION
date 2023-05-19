@@ -21,11 +21,11 @@ const Quotation = new mongoose.Schema({
   },
   create_date: {
     type: Date
-  },
-  account_id: {
-    type: String,
-    required: true
   }
+  // account_id: {
+  //   type: String,
+  //   required: true
+  // }
 });
 
 module.exports = mongoose.model('Quotation', Quotation);

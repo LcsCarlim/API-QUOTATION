@@ -4,7 +4,7 @@ const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class BtcQuotationService {
   constructor () {}
-  async execute (user_id) {
+  async execute () {
     // const maxRequests = 10;
 
     // const request = await QuotationModel.find({
@@ -23,8 +23,8 @@ module.exports = class BtcQuotationService {
       high: toBRL(json.BTCBRL.high),
       low: toBRL(json.BTCBRL.low),
       pctChange: Number(json.BTCBRL.pctChange),
-      create_date: json.BTCBRL.create_date,
-      account_id: user_id
+      create_date: json.BTCBRL.create_date
+      // account_id: user_id
     };
 
     await QuotationModel.create(BTC);

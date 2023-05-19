@@ -5,7 +5,7 @@ const QuotationModel = require('../../database/model/QuotationModel');
 module.exports = class GetQuotationService {
   constructor () {}
 
-  async execute (user_id) {
+  async execute () {
     const response = await getCurrencyGateway();
 
     const json = await response.json();
@@ -17,7 +17,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.USDBRL.low),
       pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663'
     };
 
@@ -28,7 +28,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.CADBRL.low),
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png'
     };
 
@@ -39,7 +39,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.EURBRL.low),
       pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg'
     };
 
@@ -50,7 +50,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.BTCBRL.low),
       pctChange: Number(json.BTCBRL.pctChange),
       create_date: json.BTCBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'
     };
 
@@ -61,7 +61,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.ETHBRL.low),
       pctChange: Number(json.ETHBRL.pctChange),
       create_date: json.ETHBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'
     };
 
@@ -72,7 +72,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.LTCBRL.low),
       pctChange: Number(json.LTCBRL.pctChange),
       create_date: json.LTCBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580'
     };
 
@@ -83,7 +83,7 @@ module.exports = class GetQuotationService {
       low: toBRL(json.DOGEBRL.low),
       pctChange: Number(json.DOGEBRL.pctChange),
       create_date: json.DOGEBRL.create_date,
-      account_id: user_id,
+      // account_id: user_id,
       image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
     };
 

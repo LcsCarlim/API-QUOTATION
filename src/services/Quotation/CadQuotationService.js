@@ -6,7 +6,7 @@ module.exports = class CadQuotationService {
   constructor () {
   }
 
-  async execute (user_id) {
+  async execute () {
     // const maxRequests = 10;
 
     // const request = await QuotationModel.find({
@@ -25,8 +25,8 @@ module.exports = class CadQuotationService {
       high: toBRL(json.CADBRL.high),
       low: toBRL(json.CADBRL.low),
       pctChange: Number(json.CADBRL.pctChange),
-      create_date: json.CADBRL.create_date,
-      account_id: user_id
+      create_date: json.CADBRL.create_date
+      // account_id: user_id
     };
 
     await QuotationModel.create(CAD);

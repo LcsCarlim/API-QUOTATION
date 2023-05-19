@@ -4,7 +4,7 @@ const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class EurQuotationService {
   constructor () {}
-  async execute (user_id) {
+  async execute () {
     // const maxRequests = 10;
 
     // const request = await QuotationModel.find({
@@ -23,8 +23,8 @@ module.exports = class EurQuotationService {
       high: toBRL(json.EURBRL.high),
       low: toBRL(json.EURBRL.low),
       pctChange: Number(json.EURBRL.pctChange),
-      create_date: json.EURBRL.create_date,
-      account_id: user_id
+      create_date: json.EURBRL.create_date
+      // account_id: user_id
     };
 
     await QuotationModel.create(EUR);

@@ -1,9 +1,8 @@
 const EthQuotationService = require('../../services/Quotation/EthQuotationService');
 
 module.exports = async (req, res) => {
-  const { id } = req.user;
   const ethQuotationService = new EthQuotationService();
-  const data = await ethQuotationService.execute(id);
+  const data = await ethQuotationService.execute();
 
   res.status(200).json(data);
 };
