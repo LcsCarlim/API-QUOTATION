@@ -90,6 +90,10 @@ class GetQuotationService {
     };
 
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
+
+    return [
+      USD, CAD, EUR, BTC, ETH, LTC, DOGE
+    ];
   }
 
   startUpdatingQuotation (user_id) {
