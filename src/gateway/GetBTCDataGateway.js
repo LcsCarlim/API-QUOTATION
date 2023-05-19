@@ -1,9 +1,13 @@
 const fetch = require('node-fetch');
 
-const API = process.env.API_DAYS_BTC;
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const API = process.env.API_DAYS;
 
 module.exports = async () => {
-  return fetch(API, {
+  return fetch(`${API}/BTC-BRL/7`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
