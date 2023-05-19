@@ -1,4 +1,4 @@
-const GetDogeDataGateway = require('../../gateway/GetDogeDataGateway');
+const GetDogeDataGateway = require('../../gateway/GetDOGEDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 

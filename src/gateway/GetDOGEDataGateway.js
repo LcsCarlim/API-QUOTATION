@@ -7,7 +7,7 @@ dotenv.config();
 const API = process.env.API_DAYS_DOGE;
 
 module.exports = async () => {
-  return fetch(`${API}`, {
+  return fetch(API, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
