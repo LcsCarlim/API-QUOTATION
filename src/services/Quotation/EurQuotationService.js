@@ -4,13 +4,14 @@ const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class EurQuotationService {
   constructor () {}
+
   async execute () {
     const response = await GetEURDataGateway();
 
     const json = await response.json();
 
     const quotations = await Promise.all(
-      json.map(async (quotation) => {
+      json.quotes.map(async (quotation) => {
         return {
           code: quotation.code,
           bid: toBRL(quotation.bid),
@@ -22,7 +23,8 @@ module.exports = class EurQuotationService {
         };
       })
     );
+
     await QuotationModel.create(quotations);
     return quotations;
-  };
+  }
 };
