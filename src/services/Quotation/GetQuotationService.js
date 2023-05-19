@@ -39,7 +39,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       account_id: user_id,
-      image: `${process.env.API_URL}/public/cad.png`
+      image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png'
     };
 
     const EUR = {
