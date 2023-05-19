@@ -2,20 +2,12 @@ const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
-module.exports = class GetQuotationService {
-  constructor () {}
-  async execute (user_id) {
-    // const maxRequests = 10;
-    // const now = new Date();
-    // const verifyTime = now - 10 * 60 * 1000;
+class GetQuotationService {
+  constructor () {
+    this.interval = null;
+  }
 
-    // const request = await QuotationModel.find({
-    //   account_id: user_id,
-    //   create_date: { $gte: verifyTime }
-    // });
-    // console.log(request.lenght);
-    // if (request.length > maxRequests) throw new Error('Too many requests');
-
+  async updateQuotation (user_id) {
     const response = await getCurrencyGateway();
 
     const json = await response.json();
@@ -98,9 +90,17 @@ module.exports = class GetQuotationService {
     };
 
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
+  }
 
-    return [
-      USD, CAD, EUR, BTC, ETH, LTC, DOGE
-    ];
-  };
-};
+  startUpdatingQuotation (user_id) {
+    this.interval = setInterval(() => {
+      this.updateQuotation(user_id);
+    }, 10000);
+  }
+
+  stopUpdatingQuotation () {
+    clearInterval(this.interval);
+  }
+}
+
+module.exports = GetQuotationService;
