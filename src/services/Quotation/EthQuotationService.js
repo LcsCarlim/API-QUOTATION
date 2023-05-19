@@ -9,21 +9,20 @@ module.exports = class EthQuotationService {
 
     const json = await response.json();
 
-    const ETH = {
-      code: json.ETHBRL.code,
-      bid: toBRL(json.ETHBRL.bid),
-      high: toBRL(json.ETHBRL.high),
-      low: toBRL(json.ETHBRL.low),
-      pctChange: Number(json.ETHBRL.pctChange),
-      create_date: json.ETHBRL.create_date
-      // account_id: user_id
-    };
-
-    await QuotationModel.create(ETH);
-
-    return {
-      ETH
-
-    };
+    const quotations = await Promise.all(
+      json.map(async (quotation) => {
+        return {
+          code: quotation.code,
+          bid: toBRL(quotation.bid),
+          high: toBRL(quotation.high),
+          low: toBRL(quotation.low),
+          pctChange: Number(quotation.pctChange),
+          create_date: quotation.create_date
+          // account_id: user_id
+        };
+      })
+    );
+    await QuotationModel.create(quotations);
+    return quotations;
   };
 };

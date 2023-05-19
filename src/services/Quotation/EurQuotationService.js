@@ -9,18 +9,20 @@ module.exports = class EurQuotationService {
 
     const json = await response.json();
 
-    const EUR = {
-      code: json.EURBRL.code,
-      bid: toBRL(json.EURBRL.bid),
-      high: toBRL(json.EURBRL.high),
-      low: toBRL(json.EURBRL.low),
-      pctChange: Number(json.EURBRL.pctChange),
-      create_date: json.EURBRL.create_date
-      // account_id: user_id
-    };
-
-    await QuotationModel.create(EUR);
-
-    return { EUR };
+    const quotations = await Promise.all(
+      json.map(async (quotation) => {
+        return {
+          code: quotation.code,
+          bid: toBRL(quotation.bid),
+          high: toBRL(quotation.high),
+          low: toBRL(quotation.low),
+          pctChange: Number(quotation.pctChange),
+          create_date: quotation.create_date
+          // account_id: user_id
+        };
+      })
+    );
+    await QuotationModel.create(quotations);
+    return quotations;
   };
 };

@@ -11,20 +11,20 @@ module.exports = class CadQuotationService {
 
     const json = await response.json();
 
-    const CAD = {
-      code: json.CADBRL.code,
-      bid: toBRL(json.CADBRL.bid),
-      high: toBRL(json.CADBRL.high),
-      low: toBRL(json.CADBRL.low),
-      pctChange: Number(json.CADBRL.pctChange),
-      create_date: json.CADBRL.create_date
-      // account_id: user_id
-    };
-
-    await QuotationModel.create(CAD);
-
-    return {
-      CAD
-    };
+    const quotations = await Promise.all(
+      json.map(async (quotation) => {
+        return {
+          code: quotation.code,
+          bid: toBRL(quotation.bid),
+          high: toBRL(quotation.high),
+          low: toBRL(quotation.low),
+          pctChange: Number(quotation.pctChange),
+          create_date: quotation.create_date
+          // account_id: user_id
+        };
+      })
+    );
+    await QuotationModel.create(quotations);
+    return quotations;
   };
 };

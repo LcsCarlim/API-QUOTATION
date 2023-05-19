@@ -9,21 +9,20 @@ module.exports = class LtcQuotationService {
 
     const json = await response.json();
 
-    const LTC = {
-      code: json.LTCBRL.code,
-      bid: toBRL(json.LTCBRL.bid),
-      high: toBRL(json.LTCBRL.high),
-      low: toBRL(json.LTCBRL.low),
-      pctChange: Number(json.LTCBRL.pctChange),
-      create_date: json.LTCBRL.create_date
-      // account_id: user_id
-    };
-
-    await QuotationModel.create(LTC);
-
-    return {
-      LTC
-
-    };
+    const quotations = await Promise.all(
+      json.map(async (quotation) => {
+        return {
+          code: quotation.code,
+          bid: toBRL(quotation.bid),
+          high: toBRL(quotation.high),
+          low: toBRL(quotation.low),
+          pctChange: Number(quotation.pctChange),
+          create_date: quotation.create_date
+          // account_id: user_id
+        };
+      })
+    );
+    await QuotationModel.create(quotations);
+    return quotations;
   };
 };
