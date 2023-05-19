@@ -2,12 +2,10 @@ const getCurrencyGateway = require('../../gateway/GetAPIDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
-class GetQuotationService {
-  constructor () {
-    this.interval = null;
-  }
+module.exports = class GetQuotationService {
+  constructor () {}
 
-  async updateQuotation (user_id) {
+  async execute (user_id) {
     const response = await getCurrencyGateway();
 
     const json = await response.json();
@@ -94,17 +92,5 @@ class GetQuotationService {
     return [
       USD, CAD, EUR, BTC, ETH, LTC, DOGE
     ];
-  }
-
-  startUpdatingQuotation (user_id) {
-    this.interval = setInterval(() => {
-      this.updateQuotation(user_id);
-    }, 10000);
-  }
-
-  stopUpdatingQuotation () {
-    clearInterval(this.interval);
-  }
-}
-
-module.exports = GetQuotationService;
+  };
+};
