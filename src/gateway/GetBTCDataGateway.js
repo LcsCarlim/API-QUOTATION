@@ -1,9 +1,5 @@
 const fetch = require('node-fetch');
 
-const dotenv = require('dotenv');
-
-dotenv.config();
-
 const API = process.env.API_DAYS_BTC;
 
 module.exports = async () => {
