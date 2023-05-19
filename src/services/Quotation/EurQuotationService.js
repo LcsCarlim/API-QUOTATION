@@ -11,7 +11,7 @@ module.exports = class EurQuotationService {
     const json = await response.json();
 
     const quotations = await Promise.all(
-      json.quotes.map(async (quotation) => {
+      json.map(async (quotation) => {
         return {
           code: quotation.code,
           bid: toBRL(quotation.bid),
@@ -23,8 +23,7 @@ module.exports = class EurQuotationService {
         };
       })
     );
-
     await QuotationModel.create(quotations);
     return quotations;
-  }
+  };
 };
