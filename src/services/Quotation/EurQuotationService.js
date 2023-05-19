@@ -1,11 +1,11 @@
-const getCurrencyGateway = require('../../gateway/GetEURDataGateway');
+const GetEURDataGateway = require('../../gateway/GetEURDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class EurQuotationService {
   constructor () {}
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetEURDataGateway();
 
     const json = await response.json();
 

@@ -1,11 +1,12 @@
-const getCurrencyGateway = require('../../gateway/GetBTCDataGateway');
+const GetBTCDataGateway = require('../../gateway/GetBTCDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class BtcQuotationService {
   constructor () {}
+
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetBTCDataGateway();
 
     const json = await response.json();
 

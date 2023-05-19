@@ -1,4 +1,4 @@
-const getCurrencyGateway = require('../../gateway/GetCADDataGateway');
+const GetCADDataGateway = require('../../gateway/GetCADDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
@@ -7,7 +7,7 @@ module.exports = class CadQuotationService {
   }
 
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetCADDataGateway();
 
     const json = await response.json();
 

@@ -1,11 +1,11 @@
-const getCurrencyGateway = require('../../gateway/GetETHDataGateway');
+const GetETHDataGateway = require('../../gateway/GetETHDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class EthQuotationService {
   constructor () {}
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetETHDataGateway();
 
     const json = await response.json();
 

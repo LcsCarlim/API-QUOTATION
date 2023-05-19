@@ -1,4 +1,4 @@
-const getCurrencyGateway = require('../../gateway/GetDogeDataGateway');
+const GetDogeDataGateway = require('../../gateway/GetDogeDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
@@ -7,7 +7,7 @@ module.exports = class DogeQuotationService {
   }
 
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetDogeDataGateway();
 
     const json = await response.json();
 

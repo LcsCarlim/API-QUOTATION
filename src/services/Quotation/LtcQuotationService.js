@@ -1,11 +1,11 @@
-const getCurrencyGateway = require('../../gateway/GetLTCDataGateway');
+const GetLTCDataGateway = require('../../gateway/GetLTCDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class LtcQuotationService {
   constructor () {}
   async execute () {
-    const response = await getCurrencyGateway();
+    const response = await GetLTCDataGateway();
 
     const json = await response.json();
 
