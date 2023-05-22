@@ -19,52 +19,42 @@ module.exports = class BtcQuotationService {
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
           create_date: quotation.create_date,
-          btc1: [
+          history: [
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
               low: toBRL(quotation.low),
               pctChange: Number(quotation.pctChange),
               create_date: quotation.create_date
-            }
-          ],
-          btc2: [
+            },
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
               low: toBRL(quotation.low),
               pctChange: Number(quotation.pctChange),
               create_date: quotation.create_date
-            }
-          ],
-          btc3: [
+            },
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
               low: toBRL(quotation.low),
               pctChange: Number(quotation.pctChange),
               create_date: quotation.create_date
-            }
-          ],
-          btc4: [
+            },
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
               low: toBRL(quotation.low),
               pctChange: Number(quotation.pctChange),
               create_date: quotation.create_date
-            }
-          ],
-          btc5: [
+            },
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
               low: toBRL(quotation.low),
               pctChange: Number(quotation.pctChange),
               create_date: quotation.create_date
-            }
-          ],
-          btc6: [
+            },
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
