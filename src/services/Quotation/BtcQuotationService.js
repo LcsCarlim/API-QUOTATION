@@ -13,54 +13,15 @@ module.exports = class BtcQuotationService {
     const quotations = await Promise.all(
       json.map(async (quotation) => {
         return {
-          btc: [
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            },
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            },
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            },
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            },
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            },
-            {
-              bid: toBRL(quotation.bid),
-              high: toBRL(quotation.high),
-              low: toBRL(quotation.low),
-              pctChange: Number(quotation.pctChange),
-              create_date: quotation.create_date
-            }
-          ]
+          bid: toBRL(quotation.bid),
+          high: toBRL(quotation.high),
+          low: toBRL(quotation.low),
+          pctChange: Number(quotation.pctChange),
+          create_date: quotation.create_date
         };
       })
     );
     await QuotationModel.create(quotations);
-    return quotations;
+    return { btc: quotations };
   };
 };
