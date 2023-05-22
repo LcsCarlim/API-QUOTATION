@@ -1,6 +1,7 @@
 const GetEURDataGateway = require('../../gateway/GetEURDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
+const formatBRL = require('../../helpers/formatBRL');
 
 module.exports = class EurQuotationService {
   constructor () {}
@@ -11,19 +12,24 @@ module.exports = class EurQuotationService {
     const json = await response.json();
 
     const quotations = await Promise.all(
-      json.map(async (quotation) => {
+      json.slice(1).map(async (quotation) => {
         return {
-          code: quotation.code,
           bid: toBRL(quotation.bid),
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
           create_date: quotation.create_date
-          // account_id: user_id
         };
       })
     );
     await QuotationModel.create(quotations);
-    return quotations;
+    return {
+      code: 'EUR',
+      bid: formatBRL(json.at(0).bid),
+      high: formatBRL(json.at(0).high),
+      low: formatBRL(json.at(0).low),
+      pctChange: Number(json.at(0).pctChange),
+      history: quotations
+    };
   };
 };
