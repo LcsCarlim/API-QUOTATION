@@ -1,6 +1,7 @@
 const GetBTCDataGateway = require('../../gateway/GetBTCDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
+const formatBRL = require('../../helpers/formatBRL');
 
 module.exports = class BtcQuotationService {
   constructor () {}
@@ -11,7 +12,7 @@ module.exports = class BtcQuotationService {
     const json = await response.json();
 
     const quotations = await Promise.all(
-      json.map(async (quotation) => {
+      json.slice(1).map(async (quotation) => {
         return {
           bid: toBRL(quotation.bid),
           high: toBRL(quotation.high),
@@ -22,6 +23,13 @@ module.exports = class BtcQuotationService {
       })
     );
     await QuotationModel.create(quotations);
-    return { btc: quotations };
+    return {
+      code: 'BTC',
+      bid: formatBRL(json.at(0).bid),
+      high: formatBRL(json.at(0).high),
+      low: formatBRL(json.at(0).low),
+      pctChange: Number(json.at(0).pctChange),
+      history: quotations
+    };
   };
 };
