@@ -13,13 +13,7 @@ module.exports = class BtcQuotationService {
     const quotations = await Promise.all(
       json.map(async (quotation) => {
         return {
-          code: quotation.code,
-          bid: toBRL(quotation.bid),
-          high: toBRL(quotation.high),
-          low: toBRL(quotation.low),
-          pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date,
-          history: [
+          btc: [
             {
               bid: toBRL(quotation.bid),
               high: toBRL(quotation.high),
@@ -67,6 +61,6 @@ module.exports = class BtcQuotationService {
       })
     );
     await QuotationModel.create(quotations);
-    return { quotations };
+    return quotations;
   };
 };
