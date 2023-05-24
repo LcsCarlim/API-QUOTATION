@@ -3,7 +3,20 @@ const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class GetQuotationService {
-  constructor () {}
+  constructor () {
+    this.intervalId = null;
+  }
+
+  startInterval () {
+    this.intervalId = setInterval(async () => {
+      await this.execute();
+    }, 30000); // O método startInterval inicia um intervalo de tempo usando setInterval e executa o método execute a cada 30 segundos.
+  }
+
+  stopInterval () {
+    clearInterval(this.intervalId);
+    this.intervalId = null; // O método stopInterval para o intervalo, utilizando clearInterval.
+  }
 
   async execute () {
     const response = await getCurrencyGateway();
