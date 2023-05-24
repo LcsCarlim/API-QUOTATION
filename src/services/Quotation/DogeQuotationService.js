@@ -19,8 +19,7 @@ module.exports = class DogeQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date,
-          image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
+          create_date: quotation.create_date
         };
       })
     );
