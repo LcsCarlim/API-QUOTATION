@@ -17,7 +17,8 @@ module.exports = class EthQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date
+          create_date: quotation.create_date,
+          image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'
         };
       })
     );
@@ -28,7 +29,6 @@ module.exports = class EthQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880',
       history: quotations
     };
   };
