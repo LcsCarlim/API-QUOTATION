@@ -87,8 +87,6 @@ module.exports = class GetQuotationService {
       image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
     };
 
-    console.log(json);
-
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
 
     return [
