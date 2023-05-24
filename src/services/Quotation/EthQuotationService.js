@@ -17,8 +17,7 @@ module.exports = class EthQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date,
-          image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'
+          create_date: quotation.create_date
         };
       })
     );

@@ -18,8 +18,7 @@ module.exports = class BtcQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date,
-          image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'
+          create_date: quotation.create_date
         };
       })
     );

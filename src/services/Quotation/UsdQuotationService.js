@@ -17,8 +17,7 @@ module.exports = class UsdQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date,
-          image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663'
+          create_date: quotation.create_date
         };
       })
     );
