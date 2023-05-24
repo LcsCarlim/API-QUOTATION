@@ -3,7 +3,20 @@ const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class GetQuotationService {
-  constructor () {}
+  constructor () {
+    this.intervalId = null;
+  }
+
+  startInterval () {
+    this.intervalId = setInterval(async () => {
+      await this.execute();
+    }, 30000); // O método startInterval inicia um intervalo de tempo usando setInterval e executa o método execute a cada 30 segundos.
+  }
+
+  stopInterval () {
+    clearInterval(this.intervalId);
+    this.intervalId = null; // O método stopInterval para o intervalo, utilizando clearInterval.
+  }
 
   async execute () {
     const response = await getCurrencyGateway();
@@ -87,10 +100,13 @@ module.exports = class GetQuotationService {
       image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
     };
 
+    console.log(json);
+
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
 
     return [
-      USD, CAD, EUR, BTC, ETH, LTC, DOGE
+      USD, CAD, EUR, BTC, ETH, LTC, DOGE,
+      console.log(json)
     ];
   };
 };

@@ -19,7 +19,8 @@ module.exports = class CadQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date
+          create_date: quotation.create_date,
+          image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png'
         };
       })
     );
@@ -30,6 +31,7 @@ module.exports = class CadQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
+      image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png',
       history: quotations
     };
   };

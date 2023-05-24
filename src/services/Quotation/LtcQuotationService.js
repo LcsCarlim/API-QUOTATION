@@ -17,7 +17,8 @@ module.exports = class LtcQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date
+          create_date: quotation.create_date,
+          image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580'
         };
       })
     );
@@ -28,6 +29,7 @@ module.exports = class LtcQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
+      image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580',
       history: quotations
     };
   };

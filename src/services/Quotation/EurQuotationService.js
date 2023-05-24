@@ -18,7 +18,8 @@ module.exports = class EurQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date
+          create_date: quotation.create_date,
+          image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg'
         };
       })
     );
@@ -29,6 +30,7 @@ module.exports = class EurQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
+      image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg',
       history: quotations
     };
   };
