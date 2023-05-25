@@ -12,6 +12,7 @@ module.exports = class GetQuotationService {
 
     const USD = {
       code: json.USDBRL.code,
+      name: 'Dólar-Americano',
       bid: toBRL(json.USDBRL.bid),
       high: toBRL(json.USDBRL.high),
       low: toBRL(json.USDBRL.low),
@@ -23,6 +24,7 @@ module.exports = class GetQuotationService {
 
     const CAD = {
       code: json.CADBRL.code,
+      name: 'Dólar-Canadense',
       bid: toBRL(json.CADBRL.bid),
       high: toBRL(json.CADBRL.high),
       low: toBRL(json.CADBRL.low),
@@ -34,6 +36,7 @@ module.exports = class GetQuotationService {
 
     const EUR = {
       code: json.EURBRL.code,
+      name: 'Euro',
       bid: toBRL(json.EURBRL.bid),
       high: toBRL(json.EURBRL.high),
       low: toBRL(json.EURBRL.low),
@@ -45,6 +48,7 @@ module.exports = class GetQuotationService {
 
     const BTC = {
       code: json.BTCBRL.code,
+      name: 'Bitcoin',
       bid: toBRL(json.BTCBRL.bid),
       high: toBRL(json.BTCBRL.high),
       low: toBRL(json.BTCBRL.low),
@@ -56,6 +60,7 @@ module.exports = class GetQuotationService {
 
     const ETH = {
       code: json.ETHBRL.code,
+      name: 'Ethereum',
       bid: toBRL(json.ETHBRL.bid),
       high: toBRL(json.ETHBRL.high),
       low: toBRL(json.ETHBRL.low),
@@ -67,6 +72,7 @@ module.exports = class GetQuotationService {
 
     const LTC = {
       code: json.LTCBRL.code,
+      name: 'Litecoin',
       bid: toBRL(json.LTCBRL.bid),
       high: toBRL(json.LTCBRL.high),
       low: toBRL(json.LTCBRL.low),
@@ -78,6 +84,7 @@ module.exports = class GetQuotationService {
 
     const DOGE = {
       code: json.DOGEBRL.code,
+      name: 'Dogecoin',
       bid: toBRL(json.DOGEBRL.bid),
       high: toBRL(json.DOGEBRL.high),
       low: toBRL(json.DOGEBRL.low),
