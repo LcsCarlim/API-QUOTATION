@@ -26,6 +26,7 @@ module.exports = class CadQuotationService {
     await QuotationModel.create(quotations);
     return {
       code: 'CAD',
+      name: 'Dólar-Canadense',
       bid: formatBRL(json.at(0).bid),
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),

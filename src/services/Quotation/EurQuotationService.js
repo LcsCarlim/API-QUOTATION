@@ -25,6 +25,7 @@ module.exports = class EurQuotationService {
     await QuotationModel.create(quotations);
     return {
       code: 'EUR',
+      name: 'Euro',
       bid: formatBRL(json.at(0).bid),
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),

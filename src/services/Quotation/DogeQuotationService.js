@@ -26,6 +26,7 @@ module.exports = class DogeQuotationService {
     await QuotationModel.create(quotations);
     return {
       code: 'DOGE',
+      name: 'Dogecoin',
       bid: formatBRL(json.at(0).bid),
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),

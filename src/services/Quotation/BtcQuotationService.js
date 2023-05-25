@@ -25,6 +25,7 @@ module.exports = class BtcQuotationService {
     await QuotationModel.create(quotations);
     return {
       code: 'BTC',
+      name: 'Bitcoin',
       bid: formatBRL(json.at(0).bid),
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),

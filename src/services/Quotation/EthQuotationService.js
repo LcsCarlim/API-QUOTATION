@@ -24,6 +24,7 @@ module.exports = class EthQuotationService {
     await QuotationModel.create(quotations);
     return {
       code: 'ETH',
+      name: 'Ethereum',
       bid: formatBRL(json.at(0).bid),
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
