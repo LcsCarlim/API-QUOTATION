@@ -3,8 +3,7 @@ const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 
 module.exports = class GetQuotationService {
-  constructor () {
-  }
+  constructor () {}
 
   async execute () {
     const response = await getCurrencyGateway();

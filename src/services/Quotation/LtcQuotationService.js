@@ -28,6 +28,7 @@ module.exports = class LtcQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
+      image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580',
       history: quotations
     };
   };
