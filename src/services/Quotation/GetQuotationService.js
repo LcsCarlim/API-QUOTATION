@@ -90,8 +90,7 @@ module.exports = class GetQuotationService {
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
 
     return [
-      USD, CAD, EUR, BTC, ETH, LTC, DOGE,
-      console.log(json)
+      USD, CAD, EUR, BTC, ETH, LTC, DOGE
     ];
   };
 };

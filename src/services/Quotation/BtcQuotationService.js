@@ -29,7 +29,6 @@ module.exports = class BtcQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579',
       history: quotations
     };
   };

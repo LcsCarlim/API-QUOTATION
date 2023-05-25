@@ -30,7 +30,6 @@ module.exports = class DogeQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256',
       history: quotations
     };
   };
