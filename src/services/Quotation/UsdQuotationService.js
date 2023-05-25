@@ -3,7 +3,7 @@ const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
 const formatBRL = require('../../helpers/formatBRL');
 
-module.exports = class UsdQuotationService {
+module.exports = class LtcQuotationService {
   constructor () {}
   async execute () {
     const response = await GetUSDDataGateway();
