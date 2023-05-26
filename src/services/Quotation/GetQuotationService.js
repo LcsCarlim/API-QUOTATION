@@ -19,7 +19,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
       // account_id: user_id,
-      image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/usdt.png'
     };
 
     const CAD = {
@@ -55,7 +55,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.BTCBRL.pctChange),
       create_date: json.BTCBRL.create_date,
       // account_id: user_id,
-      image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Bitcoin.svg.webp'
     };
 
     const ETH = {
@@ -67,7 +67,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.ETHBRL.pctChange),
       create_date: json.ETHBRL.create_date,
       // account_id: user_id,
-      image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Ethereum-logo.png'
     };
 
     const LTC = {
@@ -79,7 +79,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.LTCBRL.pctChange),
       create_date: json.LTCBRL.create_date,
       // account_id: user_id,
-      image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/litecoin.png'
     };
 
     const DOGE = {
@@ -91,7 +91,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.DOGEBRL.pctChange),
       create_date: json.DOGEBRL.create_date,
       // account_id: user_id,
-      image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Dogecoin_Logo.png'
     };
 
     await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
