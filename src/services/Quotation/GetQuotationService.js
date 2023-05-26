@@ -31,7 +31,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.CADBRL.pctChange),
       create_date: json.CADBRL.create_date,
       // account_id: user_id,
-      image: 'https://thumbs2.imgbox.com/b1/e1/9xMx9wP5_t.png'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/dolar-canadense.png'
     };
 
     const EUR = {
@@ -43,7 +43,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.EURBRL.pctChange),
       create_date: json.EURBRL.create_date,
       // account_id: user_id,
-      image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/eurr.png'
     };
 
     const BTC = {
