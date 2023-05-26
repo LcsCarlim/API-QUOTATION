@@ -33,6 +33,7 @@ module.exports = class CadQuotationService {
       pctChange: Number(json.at(0).pctChange),
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/dolar-canadense.png',
       description: 'O dólar canadense é a moeda oficial do Canadá, amplamente aceita no país e em algumas regiões dos Estados Unidos. Sua taxa de câmbio varia de acordo com fatores econômicos e é negociada globalmente.',
+      launch: '1870',
       history: quotations
     };
   };

@@ -32,6 +32,7 @@ module.exports = class DogeQuotationService {
       low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Dogecoin_Logo.png',
+      launch: '2013',
       description: 'O Dogecoin é uma criptomoeda baseada em um meme de cachorro. Foi criado como uma brincadeira, mas ganhou popularidade. É usado principalmente para gorjetas online e doações, com transações rápidas e baixas taxas.',
       history: quotations
     };

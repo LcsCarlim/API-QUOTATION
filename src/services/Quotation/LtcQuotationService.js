@@ -30,6 +30,7 @@ module.exports = class LtcQuotationService {
       low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/litecoin.png',
+      launch: '2011',
       description: 'O Litecoin é uma criptomoeda descentralizada baseada na tecnologia blockchain, que foi criada como uma alternativa ao Bitcoin. É conhecido por transações rápidas e baixas taxas, além de ter um suprimento máximo maior do que o Bitcoin.',
       history: quotations
     };
