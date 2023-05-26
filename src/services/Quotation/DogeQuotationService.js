@@ -1,7 +1,7 @@
 const GetDogeDataGateway = require('../../gateway/GetDOGEDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
-const formatBRL = require('../../helpers/formatBRL');
+// const formatBRL = require('../../helpers/formatBRL');
 
 module.exports = class DogeQuotationService {
   constructor () {
@@ -27,9 +27,9 @@ module.exports = class DogeQuotationService {
     return {
       code: 'DOGE',
       name: 'Dogecoin',
-      bid: formatBRL(json.at(0).bid),
-      high: formatBRL(json.at(0).high),
-      low: formatBRL(json.at(0).low),
+      bid: Number(json.at(0).bid),
+      high: Number(json.at(0).high),
+      low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256',
       description: 'O Dogecoin é uma criptomoeda baseada em um meme de cachorro. Foi criado como uma brincadeira, mas ganhou popularidade. É usado principalmente para gorjetas online e doações, com transações rápidas e baixas taxas.',

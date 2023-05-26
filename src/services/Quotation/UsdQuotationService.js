@@ -1,7 +1,7 @@
 const GetUSDDataGateway = require('../../gateway/GetUSDDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
-const formatBRL = require('../../helpers/formatBRL');
+// const formatBRL = require('../../helpers/formatBRL');
 
 module.exports = class UsdQuotationService {
   constructor () {}
@@ -25,9 +25,9 @@ module.exports = class UsdQuotationService {
     return {
       code: 'USD',
       name: 'Dólar-Americano',
-      bid: formatBRL(json.at(0).bid),
-      high: formatBRL(json.at(0).high),
-      low: formatBRL(json.at(0).low),
+      bid: Number(json.at(0).bid),
+      high: Number(json.at(0).high),
+      low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663',
       description: 'O dólar é a moeda de reserva mais amplamente aceita e negociada globalmente, sendo a moeda oficial dos Estados Unidos. É usado como meio de troca em muitos países e é referência em transações internacionais, além de ser uma medida comum para avaliar o valor de outras moedas.',

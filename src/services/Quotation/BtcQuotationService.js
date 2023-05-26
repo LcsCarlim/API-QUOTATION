@@ -1,7 +1,7 @@
 const GetBTCDataGateway = require('../../gateway/GetBTCDataGateway');
 const toBRL = require('../../helpers/formatBRL');
 const QuotationModel = require('../../database/model/QuotationModel');
-const formatBRL = require('../../helpers/formatBRL');
+// const formatBRL = require('../../helpers/formatBRL');
 
 module.exports = class BtcQuotationService {
   constructor () {}
@@ -26,9 +26,9 @@ module.exports = class BtcQuotationService {
     return {
       code: 'BTC',
       name: 'Bitcoin',
-      bid: formatBRL(json.at(0).bid),
-      high: formatBRL(json.at(0).high),
-      low: formatBRL(json.at(0).low),
+      bid: Number(json.at(0).bid),
+      high: Number(json.at(0).high),
+      low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579',
       description: 'O Bitcoin é a primeira criptomoeda descentralizada, baseada em tecnologia blockchain, que permite transações diretas entre pessoas, sem intermediários. É conhecido por sua oferta limitada e volatilidade de preços, sendo usado tanto como meio de pagamento quanto como um ativo de investimento.',
