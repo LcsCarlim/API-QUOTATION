@@ -30,7 +30,7 @@ module.exports = class EurQuotationService {
       high: formatBRL(json.at(0).high),
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/eur.png',
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/eurr.png',
       description: 'O euro é a moeda comum utilizada por 19 países da União Europeia. É a segunda moeda mais negociada no mundo e é reconhecido como um importante meio de pagamento e reserva internacional.',
       history: quotations
     };
