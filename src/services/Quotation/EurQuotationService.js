@@ -31,6 +31,7 @@ module.exports = class EurQuotationService {
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://live.staticflickr.com/65535/52906488642_2485d59f42.jpg',
+      description: 'O euro é a moeda comum utilizada por 19 países da União Europeia. É a segunda moeda mais negociada no mundo e é reconhecido como um importante meio de pagamento e reserva internacional.',
       history: quotations
     };
   };

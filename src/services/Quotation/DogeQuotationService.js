@@ -32,6 +32,7 @@ module.exports = class DogeQuotationService {
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256',
+      description: 'O Dogecoin é uma criptomoeda baseada em um meme de cachorro. Foi criado como uma brincadeira, mas ganhou popularidade. É usado principalmente para gorjetas online e doações, com transações rápidas e baixas taxas.',
       history: quotations
     };
   };

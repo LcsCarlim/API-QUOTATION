@@ -30,6 +30,7 @@ module.exports = class LtcQuotationService {
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580',
+      description: 'O Litecoin é uma criptomoeda descentralizada baseada na tecnologia blockchain, que foi criada como uma alternativa ao Bitcoin. É conhecido por transações rápidas e baixas taxas, além de ter um suprimento máximo maior do que o Bitcoin.',
       history: quotations
     };
   };

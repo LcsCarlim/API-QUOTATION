@@ -30,6 +30,7 @@ module.exports = class EthQuotationService {
       low: formatBRL(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880',
+      description: 'O Ethereum é uma plataforma blockchain descentralizada que permite a criação e execução de contratos inteligentes. Ele suporta sua própria criptomoeda chamada Ether (ETH) e é conhecido por sua capacidade de hospedar aplicativos descentralizados (DApps) e tokens digitais.',
       history: quotations
     };
   };
