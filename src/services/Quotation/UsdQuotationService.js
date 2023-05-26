@@ -29,7 +29,7 @@ module.exports = class UsdQuotationService {
       high: Number(json.at(0).high),
       low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663',
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/usdt.png',
       description: 'O dólar é a moeda de reserva mais amplamente aceita e negociada globalmente, sendo a moeda oficial dos Estados Unidos. É usado como meio de troca em muitos países e é referência em transações internacionais, além de ser uma medida comum para avaliar o valor de outras moedas.',
       history: quotations
     };
