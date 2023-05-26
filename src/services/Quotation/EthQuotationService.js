@@ -29,7 +29,7 @@ module.exports = class EthQuotationService {
       high: Number(json.at(0).high),
       low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
-      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Ethereum-logo.png',
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/eth.png',
       description: 'O Ethereum é uma plataforma blockchain descentralizada que permite a criação e execução de contratos inteligentes. Ele suporta sua própria criptomoeda chamada Ether (ETH) e é conhecido por sua capacidade de hospedar aplicativos descentralizados (DApps) e tokens digitais.',
       history: quotations
     };

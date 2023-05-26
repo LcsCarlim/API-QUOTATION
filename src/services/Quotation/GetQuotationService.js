@@ -67,7 +67,7 @@ module.exports = class GetQuotationService {
       pctChange: Number(json.ETHBRL.pctChange),
       create_date: json.ETHBRL.create_date,
       // account_id: user_id,
-      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Ethereum-logo.png'
+      image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/eth.png'
     };
 
     const LTC = {
