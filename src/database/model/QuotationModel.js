@@ -19,6 +19,9 @@ const Quotation = new mongoose.Schema({
   image: {
     type: String
   },
+  timestamps: {
+    type: Date
+  },
   create_date: {
     type: Date
   }

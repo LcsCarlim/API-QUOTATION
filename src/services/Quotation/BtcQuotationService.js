@@ -19,7 +19,7 @@ module.exports = class BtcQuotationService {
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
           create_date: quotation.create_date,
-          timestamp: Number(quotation.timestamp)
+          timestamp: new Date((Number(quotation.timestamp) * 1000))
         };
       })
     );
