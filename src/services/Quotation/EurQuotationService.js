@@ -18,7 +18,8 @@ module.exports = class EurQuotationService {
           high: toBRL(quotation.high),
           low: toBRL(quotation.low),
           pctChange: Number(quotation.pctChange),
-          create_date: quotation.create_date
+          create_date: quotation.create_date,
+          timestamp: new Date((Number(quotation.timestamp) * 1000))
         };
       })
     );
