@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
   const result = tokenIsInListing(token);
 
   if (result) {
-    return res.json(401).json({
+    return res.status(401).json({
       error: 'Invalid Token'
     });
   }
