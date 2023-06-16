@@ -11,7 +11,7 @@ module.exports = class GetQuotationService {
     const json = await response.json();
 
     const USDT = {
-      code: json.USDBRL.code,
+      code: 'USDT',
       name: 'Tether',
       bid: Number(json.USDBRL.bid),
       high: Number(json.USDBRL.high),
