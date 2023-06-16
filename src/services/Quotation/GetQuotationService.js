@@ -18,7 +18,6 @@ module.exports = class GetQuotationService {
       low: Number(json.USDBRL.low),
       pctChange: Number(json.USDBRL.pctChange),
       create_date: json.USDBRL.create_date,
-      // account_id: user_id,
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/usdt.png'
     };
 
