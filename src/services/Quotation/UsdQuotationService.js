@@ -24,15 +24,15 @@ module.exports = class UsdQuotationService {
     );
     await QuotationModel.create(quotations);
     return {
-      code: 'USD',
-      name: 'Dólar-Americano',
+      code: 'USDT',
+      name: 'Tether',
       bid: Number(json.at(0).bid),
       high: Number(json.at(0).high),
       low: Number(json.at(0).low),
       pctChange: Number(json.at(0).pctChange),
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/usdt.png',
-      launch: '1792',
-      description: 'O dólar é a moeda de reserva mais amplamente aceita e negociada globalmente, sendo a moeda oficial dos Estados Unidos. É usado como meio de troca em muitos países e é referência em transações internacionais, além de ser uma medida comum para avaliar o valor de outras moedas.',
+      launch: '2014',
+      description: 'USDT (Tether) é uma criptomoeda estável que tem seu valor atrelado ao dólar americano, proporcionando estabilidade às transações em criptomoedas. É amplamente utilizada como uma forma de manter o valor em criptomoedas sem se expor à volatilidade do mercado.',
       history: quotations
     };
   };

@@ -10,9 +10,9 @@ module.exports = class GetQuotationService {
 
     const json = await response.json();
 
-    const USD = {
+    const USDT = {
       code: json.USDBRL.code,
-      name: 'Dólar-Americano',
+      name: 'Tether',
       bid: Number(json.USDBRL.bid),
       high: Number(json.USDBRL.high),
       low: Number(json.USDBRL.low),
@@ -94,10 +94,10 @@ module.exports = class GetQuotationService {
       image: 'https://raw.githubusercontent.com/LcsCarlim/API-QUOTATION/main/public/Dogecoin_Logo.png'
     };
 
-    await QuotationModel.insertMany([USD, CAD, EUR, BTC, ETH, LTC, DOGE]);
+    await QuotationModel.insertMany([USDT, CAD, EUR, BTC, ETH, LTC, DOGE]);
 
     return [
-      USD, CAD, EUR, BTC, ETH, LTC, DOGE
+      USDT, CAD, EUR, BTC, ETH, LTC, DOGE
     ];
   };
 };
